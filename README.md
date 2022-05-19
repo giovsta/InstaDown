@@ -18,3 +18,5 @@ Unfortunately, this script lacks many of the functions that would make it a viab
 At the moment the script renames the images with the random number given by Meta to the links every time you visit the page.
 I hope to be able to implement them one day, but I am open to contributions from others.
 This is the very first functional script I have ever made and I barely know the basics of Python. I hope someone will find it useful!
+
+I also added a .py that I just exported from Jupyter and haven't tested it yet, for those who may like to run it otherwise.
