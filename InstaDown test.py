@@ -30,7 +30,6 @@ import time
 
 # In[ ]:
 
-
 #opens chrome window for user agent, need to go to instagram.com and login manually, for each session
 #maybe cause I have Chrome in research mode
 #driver = webdriver.Chrome('chromedriver')
