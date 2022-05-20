@@ -4,7 +4,7 @@ coding: utf_8
 
 #python script to download instagram image
 #if used as jupyter notebook you need to run it as administrator and this notebook must be trusted
-#the more stuff you do while running the script the more likely it will givwe you random errors and stop
+#the more stuff you do while running the script the more likely it will give you random errors and stop
 
 from bs4 import BeautifulSoup
 import os
@@ -14,7 +14,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-#opens chrome window for user agent, need to go to instagram.com and login manually, for each session
+#opens chrome window for user agent, need to login manually, for each session, within one minute
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get("https://www.instagram.com")
@@ -25,23 +25,16 @@ time.sleep(60)
 #one line per URL, without adding anything else
 #put the absolute path to your links_list.txt to prevent issues
 #this transforms link_lists.txt in a list
-all_url = open("D:\STARI\Downloads\links_list.txt", "r")
-
+all_url = open("You_Need_To_Change_This\To_Your_Absolute_Path_To\links_list.txt", "r")
 data = all_url.read()
-
 url_list = data.split("\n")
-
-for item in url_list:
-    print(item)
-
 all_url.close()
-
+print("Link list creation successful!")
+time.sleep(5)
 #iterating through list
 #if interrupts simply erase downloaded URLs. you can see last download in browser
 #last shown picture not downloaded if download is not over
-# gives error when finishes links cause who cares
-
-#one day this thing will rename files to images that make actual sense
+#gives error when finishes links cause who cares
 
 for i in url_list:
     driver.get(i)
