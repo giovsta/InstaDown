@@ -1,17 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
+#!/usr/bin/env python3
+from encodings import utf_8
+coding: utf_8
 
 #python script to download instagram image
 #if used as jupyter notebook you need to run it as administrator and this notebook must be trusted
 #the more stuff you do while running the script the more likely it will givwe you random errors and stop
-get_ipython().run_line_magic('pip', 'install webdriver-manager')
-
-
-# In[ ]:
-
 
 from bs4 import BeautifulSoup
 import os
@@ -19,32 +12,20 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-#one day all the code below will allow you to use your cookies to login
-#from selenium.webdriver.chrome.options import Options
-#chrome_options = Options()
-#chrome_options.add_argument("--user-data-dir=chrome-data")
-#driver = webdriver.Chrome(options=chrome_options)
-#driver.get('https://www.instagram.com')  # Already authenticated
 import time
 
-
-# In[ ]:
-
 #opens chrome window for user agent, need to go to instagram.com and login manually, for each session
-#maybe cause I have Chrome in research mode
-#driver = webdriver.Chrome('chromedriver')
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.get("https://www.instagram.com")
+print('You have one minute to login in the open Chrome window!')
+time.sleep(60)
 
-
-# In[ ]:
-
-
-#you need to create a link_list.txt with all your Instagram URLs
-#one line per URL, without adding anything else. or change "\n"
-
+#you need to create a links_list.txt with all your Instagram URLs
+#one line per URL, without adding anything else
+#put the absolute path to your links_list.txt to prevent issues
 #this transforms link_lists.txt in a list
-all_url = open("links_list.txt", "r")
+all_url = open("D:\STARI\Downloads\links_list.txt", "r")
 
 data = all_url.read()
 
@@ -71,4 +52,3 @@ for i in url_list:
     string = str(img_url)
     with open("instagram"+str(time.time())+".png",'wb') as f:
         f.write(r.content)
-
