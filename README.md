@@ -1,5 +1,5 @@
 # InstaDown
-A very basic python script that uses Chrome's user agent to download pictures posted on Instagram.
+A simple python script that uses Chrome's user agent to download pictures posted on Instagram.
 The script uses a .txt file with one link to an Instagram post per line to extract the images.
 
 ## Installing
