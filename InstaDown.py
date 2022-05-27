@@ -24,14 +24,14 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 #open instagram
 driver.get("https://www.instagram.com")
 #checks that cookies are there
-if os.path.exists("D:\STARI\Documents\GitHub\InstaDown\cookies.pkl"):
+if os.path.exists("INSERT ABSOLUTE PATH TO cookies.pkl"):
     print("cookies retrieved")
 else:
     print("cookies not found, please create cookie file first with cookie_creator.py")
     sys.exit()
 
 #loads cookies
-cookies = pickle.load(open("D:/STARI/Documents/GitHub/InstaDown/cookies.pkl", "rb"))
+cookies = pickle.load(open("INSERT ABSOLUTE PATH TO cookies.pkl", "rb"))
 for cookie in cookies:
     driver.add_cookie(cookie)
 
@@ -39,7 +39,7 @@ for cookie in cookies:
 
 #this checks that you have created a links_list.txt file before proceeding
 #put the absolute path to your links_list.txt HERE
-if os.path.exists("D:/STARI/Documents/GitHub/InstaDown/links_list.txt"):
+if os.path.exists("INSERT ABSOLUTE PATH TO links_list.txt"):
     print("links_list.txt retrieved")
 else:
     print("no links_list.txt found! please create a links list before proceeding!")
@@ -48,7 +48,7 @@ else:
 #you need to create a links_list.txt with all your Instagram URLs
 #one line per URL, without adding anything else
 #put the absolute path to your links_list.txt HERE
-all_url = open("D:/STARI/Documents/GitHub/InstaDown/links_list.txt", "r")
+all_url = open("INSERT ABSOLUTE PATH TO links_list.txt", "r")
 data = all_url.read()
 url_list = data.split("\n")
 all_url.close()
@@ -64,7 +64,7 @@ time.sleep(0.3)
 
 for url in url_list:
     link_name = str(url.split("/")[-2])
-    print(link_name)
+    print("currently downloading: "+link_name)
     driver.get(url)
     soup = BeautifulSoup(driver.page_source, 'lxml')
     img = soup.find('img', class_='FFVAD')
@@ -72,4 +72,4 @@ for url in url_list:
     r = requests.get(img_url)
     with open("'{}'.png".format(link_name),'wb') as f:
         f.write(r.content)
-    time.sleep(0.7)
+    time.sleep(0.2)
