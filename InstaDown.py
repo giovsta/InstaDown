@@ -70,6 +70,6 @@ for url in url_list:
     img = soup.find('img', class_='FFVAD')
     img_url = img['src']
     r = requests.get(img_url)
-    with open("'{}'.png".format(link_name),'wb') as f:
+    with open("'{}'.jpg".format(link_name),'wb') as f:
         f.write(r.content)
     time.sleep(0.2)
