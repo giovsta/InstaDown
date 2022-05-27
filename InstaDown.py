@@ -11,37 +11,65 @@ import os
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-
-#opens chrome window for user agent, need to login manually, for each session, within one minute
+import pickle
+import selenium.webdriver
+import os.path
+import sys
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
+#open instagram
 driver.get("https://www.instagram.com")
-print('You have one minute to login in the open Chrome window!')
-time.sleep(60)
+#checks that cookies are there
+if os.path.exists("D:\STARI\Documents\GitHub\InstaDown\cookies.pkl"):
+    print("cookies retrieved")
+else:
+    print("cookies not found, please create cookie file first with cookie_creator.py")
+    sys.exit()
+
+#loads cookies
+cookies = pickle.load(open("D:/STARI/Documents/GitHub/InstaDown/cookies.pkl", "rb"))
+for cookie in cookies:
+    driver.add_cookie(cookie)
+
+
+
+#this checks that you have created a links_list.txt file before proceeding
+#put the absolute path to your links_list.txt HERE
+if os.path.exists("D:/STARI/Documents/GitHub/InstaDown/links_list.txt"):
+    print("links_list.txt retrieved")
+else:
+    print("no links_list.txt found! please create a links list before proceeding!")
+    sys.exit()
 
 #you need to create a links_list.txt with all your Instagram URLs
 #one line per URL, without adding anything else
-#put the absolute path to your links_list.txt to prevent issues
-#this transforms link_lists.txt in a list
-all_url = open("You_Need_To_Change_This\To_Your_Absolute_Path_To\links_list.txt", "r")
+#put the absolute path to your links_list.txt HERE
+all_url = open("D:/STARI/Documents/GitHub/InstaDown/links_list.txt", "r")
 data = all_url.read()
 url_list = data.split("\n")
 all_url.close()
-print("Link list creation successful!")
-time.sleep(5)
+
+print("Links read!")
+
+time.sleep(0.3)
+
 #iterating through list
 #if interrupts simply erase downloaded URLs. you can see last download in browser
-#last shown picture not downloaded if download is not over
-#gives error when finishes links cause who cares
+#last shown picture not downloaded unless download is not over
+#gives error when finishes links_list.txt
 
-for i in url_list:
-    driver.get(i)
+for url in url_list:
+    link_name = str(url.split("/")[-2])
+    print(link_name)
+    driver.get(url)
     soup = BeautifulSoup(driver.page_source, 'lxml')
     img = soup.find('img', class_='FFVAD')
     img_url = img['src']
     r = requests.get(img_url)
-    string = str(img_url)
-    with open("instagram"+str(time.time())+".png",'wb') as f:
+    with open("'{}'.png".format(link_name),'wb') as f:
         f.write(r.content)
+    time.sleep(0.7)
