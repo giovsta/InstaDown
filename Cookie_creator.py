@@ -19,7 +19,7 @@ driver.find_element(By.XPATH, "//button[@class='aOOlW   HoLwm ']").click()
 time.sleep(0.5)
 
 # Instagram credentials
-my_username = getpass.getpass("Insert Instagram username (input is hidden):")
+my_username = getpass.getpass("Insert Instagram username (input hidden for safety concerns):")
 while True:
     try:
         my_username = my_username 
@@ -33,7 +33,7 @@ while True:
         print("Invalid")
         continue
 
-my_password = getpass.getpass('Insert your password here (input is hidden):')
+my_password = getpass.getpass('Insert your password here (input hidden for safety concerns):')
 
 while True:
     try:
