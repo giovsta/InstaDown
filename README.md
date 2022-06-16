@@ -1,19 +1,4 @@
- 
- 
- ,---,                          ___                    ,---,                                         
-,`--.' |                        ,--.'|_                .'  .' `\                                       
-|   :  :      ,---,             |  | :,'             ,---.'     \    ,---.           .---.      ,---,  
-:   |  '  ,-+-. /  |  .--.--.   :  : ' :             |   |  .`\  |  '   ,'\         /. ./|  ,-+-. /  | 
-|   :  | ,--.'|'   | /  /    '.;__,'  /    ,--.--.   :   : |  '  | /   /   |     .-'-. ' | ,--.'|'   | 
-'   '  ;|   |  ,"' ||  :  /`./|  |   |    /       \  |   ' '  ;  :.   ; ,. :    /___/ \: ||   |  ,"' | 
-|   |  ||   | /  | ||  :  ;_  :__,'| :   .--.  .-. | '   | ;  .  |'   | |: : .-'.. '   ' .|   | /  | | 
-'   :  ;|   | |  | | \  \    `. '  : |__  \__\/: . . |   | :  |  ''   | .; :/___/ \:     '|   | |  | | 
-|   |  '|   | |  |/   `----.   \|  | '.'| ," .--.; | '   : | /  ; |   :    |.   \  ' .\   |   | |  |/  
-'   :  ||   | |--'   /  /`--'  /;  :    ;/  /  ,.  | |   | '` ,/   \   \  /  \   \   ' \ ||   | |--'   
-;   |.' |   |/      '--'.     / |  ,   /;  :   .'   \;   :  .'      `----'    \   \  |--" |   |/       
-'---'   '---'         `--'---'   ---`-' |  ,     .-./|   ,.'                   \   \ |    '---'        
-                                         `--`---'    '---'                      '---"                  
-
+# InstaDown
 A simple python script that uses Chrome's user agent to download pictures posted on Instagram.
 The script uses a .txt file with one link to an Instagram post per line to extract the images.
 It renames the downloaded JPG images with the unique code identifying each post (the one after instagram.com/p/...)
