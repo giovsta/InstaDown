@@ -1,18 +1,3 @@
-'''                                                                                                    
-   ,---,                          ___                    ,---,                                         
-,`--.' |                        ,--.'|_                .'  .' `\                                       
-|   :  :      ,---,             |  | :,'             ,---.'     \    ,---.           .---.      ,---,  
-:   |  '  ,-+-. /  |  .--.--.   :  : ' :             |   |  .`\  |  '   ,'\         /. ./|  ,-+-. /  | 
-|   :  | ,--.'|'   | /  /    '.;__,'  /    ,--.--.   :   : |  '  | /   /   |     .-'-. ' | ,--.'|'   | 
-'   '  ;|   |  ,"' ||  :  /`./|  |   |    /       \  |   ' '  ;  :.   ; ,. :    /___/ \: ||   |  ,"' | 
-|   |  ||   | /  | ||  :  ;_  :__,'| :   .--.  .-. | '   | ;  .  |'   | |: : .-'.. '   ' .|   | /  | | 
-'   :  ;|   | |  | | \  \    `. '  : |__  \__\/: . . |   | :  |  ''   | .; :/___/ \:     '|   | |  | | 
-|   |  '|   | |  |/   `----.   \|  | '.'| ," .--.; | '   : | /  ; |   :    |.   \  ' .\   |   | |  |/  
-'   :  ||   | |--'   /  /`--'  /;  :    ;/  /  ,.  | |   | '` ,/   \   \  /  \   \   ' \ ||   | |--'   
-;   |.' |   |/      '--'.     / |  ,   /;  :   .'   \;   :  .'      `----'    \   \  |--" |   |/       
-'---'   '---'         `--'---'   ---`-' |  ,     .-./|   ,.'                   \   \ |    '---'        
-                                         `--`---'    '---'                      '---"                '''
-
 # InstaDown
 A simple python script that uses Chrome's user agent to download pictures posted on Instagram.
 The script uses a .txt file with one link to an Instagram post per line to extract the images.
@@ -23,7 +8,7 @@ Clone this repository from Github or download it.
 
 First you need to install the packages in requirements.txt:
 
-#### **_pip install -r requirements.txt_**
+''' pip install -r requirements.txt '''
 
 ## Setting up a list of links for download
 
