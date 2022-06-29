@@ -1,14 +1,16 @@
 import pickle
 import selenium.webdriver
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import getpass
 
-# initialize the Chrome driver
-driver = webdriver.Chrome(ChromeDriverManager().install())
+# initialize the browser
+fireFoxOptions = webdriver.FirefoxOptions()
+fireFoxOptions.headless = True
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=fireFoxOptions)
 
 #go to website
 driver.get("https://instagram.com")

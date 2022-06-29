@@ -10,18 +10,21 @@ from bs4 import BeautifulSoup
 import os
 import requests
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 import pickle
 import selenium.webdriver
 import os.path
 import sys
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
-#open instagram
+#run headless
+fireFoxOptions = webdriver.FirefoxOptions()
+fireFoxOptions.headless = True
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=fireFoxOptions)
+#open Instagram
 driver.get("https://www.instagram.com")
 #checks that cookies are there
 if os.path.exists("INSERT ABSOLUTE PATH TO cookies.pkl"):
@@ -63,13 +66,17 @@ time.sleep(0.3)
 #gives error when finishes links_list.txt
 
 for url in url_list:
-    link_name = str(url.split("/")[-2])
-    print("currently downloading: "+link_name)
-    driver.get(url)
-    soup = BeautifulSoup(driver.page_source, 'lxml')
-    img = soup.find('img', class_='FFVAD')
-    img_url = img['src']
-    r = requests.get(img_url)
-    with open("'{}'.jpg".format(link_name),'wb') as f:
-        f.write(r.content)
-    time.sleep(0.2)
+    if url != "":
+        link_name = str(url.split("/")[-1])
+        print("Currently downloading: "+link_name)
+        driver.get(url)
+        soup = BeautifulSoup(driver.page_source, 'lxml')
+        img = soup.find('img', class_='_aagt')
+        img_url = img['src']
+        r = requests.get(img_url)
+        with open("{}.jpg".format(link_name),'wb') as f:
+            f.write(r.content)
+        time.sleep(0.2)
+    else:
+        print("No links to download detected!")
+        sys.exit()
