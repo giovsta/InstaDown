@@ -1,14 +1,25 @@
+```
+_________ _        _______ _________ _______  ______   _______           _       
+\__   __/( (    /|(  ____ \\__   __/(  ___  )(  __  \ (  ___  )|\     /|( (    /|
+   ) (   |  \  ( || (    \/   ) (   | (   ) || (  \  )| (   ) || )   ( ||  \  ( |
+   | |   |   \ | || (_____    | |   | (___) || |   ) || |   | || | _ | ||   \ | |
+   | |   | (\ \) |(_____  )   | |   |  ___  || |   | || |   | || |( )| || (\ \) |
+   | |   | | \   |      ) |   | |   | (   ) || |   ) || |   | || || || || | \   |
+___) (___| )  \  |/\____) |   | |   | )   ( || (__/  )| (___) || () () || )  \  |
+\_______/|/    )_)\_______)   )_(   |/     \|(______/ (_______)(_______)|/    )_)
+```
+
 # InstaDown
 A simple python script that uses Chrome's user agent to download pictures posted on Instagram.
 The script uses a .txt file with one link to an Instagram post per line to extract the images.
-It renames the downloaded JPG images with the unique code identifying each post (the one after instagram.com/p/...)
+It renames the downloaded JPG images with the unique code identifying each post (the one after www.instagram.com/p/...)
 
 ## Installing
 Clone this repository from Github or download it.
 
 First you need to install the packages in requirements.txt:
 
-#### **_pip install -r requirements.txt_**
+```pip install -r requirements.txt```
 
 ## Setting up a list of links for download
 
@@ -16,7 +27,11 @@ Then, you need to open the links_list.txt and add your list of links, one per li
 
 ***IMPORTANT: Add its absolute path in the InstaDown.py file.***
 
-To make it as easy as possible, you just need to open the .py file and search "INSERT ABSOLUTE PATH TO " and substitute it with your path to the file. You will need to do the same for the cookies file
+To make it as easy as possible, you just need to open the .py file and search
+
+```INSERT ABSOLUTE PATH TO```
+
+and substitute it with your path to the file. You will need to do the same for the cookies file
 
 ## Setting Up Cookies
 This passage is necessary to prevent InstaDown from requesting a login everytime you open a new session. You only need to create the file once.
@@ -24,7 +39,7 @@ This passage is necessary to prevent InstaDown from requesting a login everytime
 Open a command prompt or powershell window and set its working directory in the InstaDown folder.
 Then run:
 
-#### **_python Cookie_creator.py_**
+```python Cookie_creator.py```
 
 It will open a Chrome tab, go to Instagram.com and ask you to input username and password in the command prompt window. *THIS IS SAFER THAN LOGGING TRADITIONALLY.*
 If it logs in correctly, a cookie.pkl file will be created in your InstaDown folder.
@@ -34,7 +49,7 @@ If it logs in correctly, a cookie.pkl file will be created in your InstaDown fol
 ## Running
 Just run this in a powershell window with the InstaDown folder as working directory:
 
-##### _python InstaDown.py_
+```python InstaDown.py```
 
 It will tell you the unique code corresponding to the image it is downloading as it progresses.
 You can find all the information necessary to understand the script and tweak it within the code, as it is heavily commented.
