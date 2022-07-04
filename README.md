@@ -69,4 +69,7 @@ When it crashes (because it will crash), you can see the last downloaded post in
 
 If it crashed because the post has been deleted and it finds no image to download, erase that link as well, otherwise it will keep crashing.
 
+If it does not work at all, check if Meta changed the class id identifying the HTML element containing the picture link. Currently (7/22), it is "_aagv".
+
+
 This is the very first functional script I have ever made and I am just starting with Python and scraping. I hope someone will find it useful!

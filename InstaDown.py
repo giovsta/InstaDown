@@ -71,7 +71,7 @@ for url in url_list:
         print("Currently downloading: "+link_name)
         driver.get(url)
         soup = BeautifulSoup(driver.page_source, 'lxml')
-        img = soup.find('img', class_='_aagt')
+        img = soup.find('img', class_='_aagv')
         img_url = img['src']
         r = requests.get(img_url)
         with open("{}.jpg".format(link_name),'wb') as f:
