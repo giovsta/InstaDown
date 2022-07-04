@@ -8,7 +8,6 @@ _________ _        _______ _________ _______  ______   _______           _
 ___) (___| )  \  |/\____) |   | |   | )   ( || (__/  )| (___) || () () || )  \  |
 \_______/|/    )_)\_______)   )_(   |/     \|(______/ (_______)(_______)|/    )_)
 ```
-UPDATE NEEDED, CURRENT VERSION IS DEPRECATED, WILL PUSH UPDATE AND RE-RELEASE SOON
 
 
 # InstaDown
@@ -64,8 +63,8 @@ The images are saved in the same folder as that of InstaDown.py.
 ### Troubleshooting
 When it crashes (because it will crash), you can see the last downloaded post in the terminal window, double check that the image has been downloaded in the output folder (named with the hashtag or username handle you scraped), fix the links_list.txt accordingly and proceed.
 
-**IMPORTANT: if the script finishes the links, it will let you know by printing XYZ (need to update .py from home computer)**
+**IMPORTANT: if the script finishes the links, it will let you know by printing "No links to download detected!" and shut down
 
 If it crashed because the post has been deleted and it finds no image to download, erase that link as well, otherwise it will keep crashing.
 
-This is the very first functional script I have ever made and I barely know the basics of Python. I hope someone will find it useful!
+This is the very first functional script I have ever made and I am just starting with Python and scraping. I hope someone will find it useful!
