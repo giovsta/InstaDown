@@ -10,9 +10,10 @@ ___) (___| )  \  |/\____) |   | |   | )   ( || (__/  )| (___) || () () || )  \  
 ```
 
 # InstaDown
-A simple python script that uses GeckoDriver to download pictures posted on Instagram.
-The script uses a .txt file with one link to an Instagram post per line to extract the images.
-It renames the downloaded JPG images with the unique code identifying each post (the one after www.instagram.com/p/...)
+A simple python script that uses GeckoDriver to intiate an headless Firefox browser agent to download pictures from Instagram posts' URLs.
+The script uses a .txt file with one post link per line to extract the images (the file contains examples already).
+It renames the downloaded JPG images with the unique code identifying each post (the one after www.instagram.com/p/...).
+Moreover, to ease the login phase, another .py file can be run to login and create a cookies file, that is needed by InstaDown to operate properly
 
 ## Installing
 Clone this repository from Github or download it.
@@ -46,21 +47,22 @@ If it logs in correctly, a cookie.pkl file will be created in your InstaDown fol
 
 ***IMPORTANT: Add its absolute path in the InstaDown.py file.*** 
 
-## Running
+## Running InstaDown, step by step
 Just run this in a powershell window with the InstaDown folder as working directory:
 
 ```python InstaDown.py```
 
 It will tell you the unique code corresponding to the image it is downloading as it progresses.
+
 You can find all the information necessary to understand the script and tweak it within the code, as it is heavily commented.
 
 You need to give it a list of links to instagram posts, written one per line in a .txt file. Rename the .txt file links_list.txt (or change the code) and set the absolute path to your file in the script.
 The images are saved in the same folder as that of InstaDown.py.
 
 ### Troubleshooting
-When it crashes (because it will crash), you can see the first not downloaded post in the Chrome tab, adjust the .txt file accordingly, rerun the downloader and it should start again.
+When it crashes (because it will crash), you can see the last downloaded post in the terminal window, double check that the image has been downloaded in the output folder (named with the hashtag or username handle you scraped), fix the links_list.txt accordingly and proceed.
 
-**IMPORTANT: it also chrashes when the list of links is simply finished**
+**IMPORTANT: if the script finishes the links, it will let you know by printing XYZ (need to update .py from home computer)**
 
 If it crashed because the post has been deleted and it finds no image to download, erase that link as well, otherwise it will keep crashing.
 
