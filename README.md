@@ -33,7 +33,9 @@ To make it as easy as possible, you just need to open the .py file and search
 
 ```INSERT ABSOLUTE PATH TO```
 
-and substitute it with your path to the file. You will need to do the same for the cookies file
+and substitute it with your path to the file.
+
+***You will need to do the same for the cookies file***
 
 ## Setting Up Cookies
 This passage is necessary to prevent InstaDown from requesting a login everytime you open a new session. You only need to create the file once.
@@ -43,7 +45,7 @@ Then run:
 
 ```python Cookie_creator.py```
 
-It will open a Chrome tab, go to Instagram.com and ask you to input username and password in the command prompt window. *THIS IS SAFER THAN LOGGING TRADITIONALLY.*
+It will open a browser in the background (invisible to the user), go to Instagram.com and ask you to input username and password in the command prompt, powershell or terminal window. *THIS IS SAFER THAN LOGGING TRADITIONALLY, ESPECIALLY FOR POTENTIALLY COMPROMISED MACHINES, BECAUSE THE INPUT IS HIDDEN TO THE USER AS WELL.*
 If it logs in correctly, a cookie.pkl file will be created in your InstaDown folder.
 
 ***IMPORTANT: Add its absolute path in the InstaDown.py file.*** 
