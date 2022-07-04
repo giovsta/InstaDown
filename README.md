@@ -8,6 +8,8 @@ _________ _        _______ _________ _______  ______   _______           _
 ___) (___| )  \  |/\____) |   | |   | )   ( || (__/  )| (___) || () () || )  \  |
 \_______/|/    )_)\_______)   )_(   |/     \|(______/ (_______)(_______)|/    )_)
 ```
+UPDATE NEEDED, CURRENT VERSION IS DEPRECATED, WILL PUSH UPDATE AND RE-RELEASE SOON
+
 
 # InstaDown
 A simple python script that uses GeckoDriver to intiate an headless Firefox browser agent to download pictures from Instagram posts' URLs.
