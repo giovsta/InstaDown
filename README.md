@@ -9,6 +9,14 @@ ___) (___| )  \  |/\____) |   | |   | )   ( || (__/  )| (___) || () () || )  \  
 \_______/|/    )_)\_______)   )_(   |/     \|(______/ (_______)(_______)|/    )_)
 ```
 
+DISCLAIMER: for those of you somehow thinking Steve Jobs was more than an enslaver getting phones out of Foxconn employees' tears, there seems to be an incompatibility between some of your Apple CPUs and the latest GeckoDriver instance. If the related error pops up as you run the cookie creator, you can manually download the correct driver from [the official repository](https://github.com/mozilla/geckodriver/releases). I am guessing that is the aarch64 version. Then put its location (absolute path) in the cookie_creator.py file swapping this string:
+
+```driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=fireFoxOptions)```
+
+with this string, with your path to the downloaded geckodriver obviously:
+
+```driver = webdriver.Firefox(executable_path="INSERT YOUR PATH", options=fireFoxOptions)```
+
 
 # InstaDown
 A simple python script that uses GeckoDriver to intiate an headless Firefox browser agent to download pictures from Instagram posts' URLs.
