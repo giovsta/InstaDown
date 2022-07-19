@@ -25,7 +25,7 @@ It renames the downloaded JPG images with the unique code identifying each post 
 Moreover, to ease the login phase, another .py file can be run to login and create a cookies file, that is needed by InstaDown to operate properly
 
 ## Installing
-Clone this repository from Github or download it.
+Clone this repository from Github or download it. Alternatively you can install it with '''pip install InstaDown_new'''. However it will be located inside your main Python folder, in ≈\Python\Lib\site-packages\package_InstaDown. You will need to run it from there then.
 
 First you need to install the packages in requirements.txt:
 
