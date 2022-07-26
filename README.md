@@ -9,7 +9,9 @@ ___) (___| )  \  |/\____) |   | |   | )   ( || (__/  )| (___) || () () || )  \  
 \_______/|/    )_)\_______)   )_(   |/     \|(______/ (_______)(_______)|/    )_)
 ```
 
-DISCLAIMER: There seems to be an incompatibility between some Apple CPUs and the latest GeckoDriver instance (in fact they gave out multiple geckodrivers to overcome the issue, but the downloader does not know that). If the related error pops up as you run the cookie creator, you can manually download the correct driver from [the official repository](https://github.com/mozilla/geckodriver/releases). I am guessing that is the aarch64 version. Then put its location (absolute path) in the cookie_creator.py and the InstaDown.py files swapping this string:
+DISCLAIMER 1: I am discontinuing the project right now, as someone at Meta seems to have found a way to make it impossible to consistently use Selenium on Instagram without showing its changes in the HTML/Javascript of the website. I concluded it is some intervention on the server side. If I will have some working tool developed in the future, I will let you know so that I can send it to you privately.
+
+DISCLAIMER 2: There seems to be an incompatibility between some Apple CPUs and the latest GeckoDriver instance (in fact they gave out multiple geckodrivers to overcome the issue, but the downloader does not know that). If the related error pops up as you run the cookie creator, you can manually download the correct driver from [the official repository](https://github.com/mozilla/geckodriver/releases). I am guessing that is the aarch64 version. Then put its location (absolute path) in the cookie_creator.py and the InstaDown.py files swapping this string:
 
 ```driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=fireFoxOptions)```
 
